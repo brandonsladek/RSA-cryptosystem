@@ -227,7 +227,7 @@ public class Crypto {
 			
 			for (int i = 0; i < encryptedMessage.length; i++) {
 				characterCode = encodedMessage[i];
-				encryptedCode = (int) Math.pow(characterCode, publicKeyExponent);
+				encryptedCode = ((int) Math.pow(characterCode, publicKeyExponent) % product);
 				encryptedMessage[i] = encryptedCode;
 			}
 		} // End of encrypt method
